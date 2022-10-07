@@ -19,6 +19,26 @@ The key packages being used in this example are:
  - [Shiny](https://shiny.rstudio.com/) for app framework and reactivity
  - [dplyr](https://dplyr.tidyverse.org/) for readability
 
+### Shiny 
+
+A simple reactive shiny template was used for setting up the initial reactivity. 
+
+<details>
+  <summary>Relevant reading:</summary>: 
+
+ - Starting template: <https://shiny.rstudio.com/articles/dynamic-ui.html> 
+ - Mastering shiny: <https://mastering-shiny.org/action-dynamic.html> 
+ - Amazing database shiny app: <https://shanghai.hosting.nyu.edu/data/r/case-4-database-management-shiny.html> 
+ - Shiny app as a package: <https://engineering-shiny.org/structuring-project.html> 
+ - Converting a shiny app to async: <https://rstudio.github.io/promises/articles/casestudy.html> 
+ - Shiny filter based on user inputs for dataframe: <https://stackoverflow.com/questions/72091981/r-shiny-filter-data-based-on-user-input-and-update-the-plot> 
+ - Shiny app dealing with json: <https://community.rstudio.com/t/shiny-download-data-with-filter-parameters/80915/6> 
+ - Shiny filters: <https://www.rdocumentation.org/packages/shinyfilter/versions/0.1.1> 
+ - Build a login page in shiny: <https://www.listendata.com/2019/06/how-to-add-login-page-in-shiny-r.html>
+
+</details>
+
+
 ### Variables are being saved to the user level .Renviron config file
 
 For this project the following variables are being saved in the .Renviron file (credentials are stripped for security): 
@@ -43,10 +63,14 @@ Saved variables can be accessed with:
 variable_name <- Sys.getenv("variable_name")
 ```
 
-Relevant reading: 
+ 
+
+<details>
+  <summary>Relevant reading:</summary>
 
 When working in a more complex environment structure where separate project, site, and user environments are being used [this support article has useful information](https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf) with a [deeper dive into R's startup here](https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/).
 
+</details>
 
 ### Capturing user information 
 
@@ -122,13 +146,27 @@ The output will show:
 ![alt text](/img/session-image.PNG "Example output")
 
 
-Relevant reading: 
+<details>
+  <summary>Relevant reading:</summary>
 
  - [https://shiny.rstudio.com/articles/client-data.html](https://shiny.rstudio.com/articles/client-data.html)
  - [https://shiny.rstudio.com/articles/permissions.html](https://shiny.rstudio.com/articles/permissions.html)
  - [https://shiny.rstudio.com/reference/shiny/latest/session.html](https://shiny.rstudio.com/reference/shiny/latest/session.html)
  - [https://stackoverflow.com/questions/62546575/how-to-get-users-information-in-rshiny](https://stackoverflow.com/questions/62546575/how-to-get-users-information-in-rshiny)
  - [https://community.rstudio.com/t/identifying-current-user-in-rstudio-connect/33626/4](https://community.rstudio.com/t/identifying-current-user-in-rstudio-connect/33626/4)
+ 
+ - Blog post on shiny usage tracking: <https://www.rstudio.com/blog/track-shiny-app-use-server-api/> 
+ - Blog post about connect in general: <https://www.rstudio.com/blog/sharing-shiny-apps-on-rstudio-connect/> 
+ - Sean Lopps article about using Connect with usage tracking: <https://shiny.rstudio.com/articles/usage-metrics.html> 
+ - Filtering app based on viewer location: <https://stackoverflow.com/questions/40795172/shiny-how-to-filter-data-based-on-location-of-user-input-data> 
+ - Tracking user activity support article: <https://support.rstudio.com/hc/en-us/articles/360041320233-How-do-I-track-user-activity-within-a-Shiny-application-> 
+ - Great post from a user with rstudio connect getting user info: <https://stackoverflow.com/questions/62546575/how-to-get-users-information-in-rshiny>
+ 
+ - The sales report app writeup: <https://shiny.rstudio.com/articles/permissions.html> 
+ - The sales app code, at least the original version of it before it was moved: <https://github.com/Tavpritesh/shiny-dev-gallery/tree/master/personalized-ui> 
+ - The docker repo, archived, with the sales app: <https://github.com/rstudio/docker-shiny-gallery/tree/master/ssp-personalized-ui> 
+
+</details>
 
 ### Programmatic rendering 
 
@@ -233,7 +271,8 @@ variant_history <- get_variant_renderings(rmd_content_variant)
 
 </details>
 
-Relevant reading: 
+<details>
+  <summary>Relevant reading:</summary>
 
  - [connectapi package](https://github.com/rstudio/connectapi) for content list and programmatic re-rendering (which compliments   -  -  - [rsconnect](https://github.com/rstudio/rsconnect) )
  - [RStudio Connect: Server API Cookbook](https://docs.rstudio.com/connect/cookbook/deploying/)
@@ -242,14 +281,15 @@ Relevant reading:
  - [connectapi git](https://github.com/rstudio/connectapi)
  - [Community post on programmatic publishing](https://community.rstudio.com/t/programmatically-triggering-re-rendering-of-rmarkdown-document-hosted-on-rstudioconnect/61028)
 
-
+</details>
 
 ### Bonus: Loading widgets! 
 
 For this example a spinner widget has been added using [shinycssloaders](https://github.com/daattali/shinycssloaders) as well as a Modal pop-up message using [ModalURL](https://shiny.rstudio.com/reference/shiny/1.6.0/urlModal.html). 
 
 
-Relevant reading: 
+<details>
+  <summary>Relevant reading:</summary>
 
  - Progress bars: <https://shiny.rstudio.com/articles/progress.html> 
  - On best practices and preventing kicking off a ton of updates: <https://www.r-bloggers.com/2018/07/long-running-tasks-with-shiny-challenges-and-solutions/> Showing notifications: <https://shiny.rstudio.com/articles/notifications.html> 
@@ -258,35 +298,9 @@ Relevant reading:
  - One day I hope to understand and use isolation: <https://shiny.rstudio.com/articles/isolation.html> 
  - Tangentially related interesting post about closure error messages: <https://coolbutuseless.github.io/2019/02/12/object-of-type-closure-is-not-subsettable/> 
 
-### Shiny 
-
-Relevant reading on Shiny: 
-
- - Starting template: <https://shiny.rstudio.com/articles/dynamic-ui.html> 
- - Mastering shiny: <https://mastering-shiny.org/action-dynamic.html> 
- - Amazing database shiny app: <https://shanghai.hosting.nyu.edu/data/r/case-4-database-management-shiny.html> 
- - Shiny app as a package: <https://engineering-shiny.org/structuring-project.html> 
- - Converting a shiny app to async: <https://rstudio.github.io/promises/articles/casestudy.html> 
- - Shiny filter based on user inputs for dataframe: <https://stackoverflow.com/questions/72091981/r-shiny-filter-data-based-on-user-input-and-update-the-plot> 
- - Shiny app dealing with json: <https://community.rstudio.com/t/shiny-download-data-with-filter-parameters/80915/6> 
- - Shiny filters: <https://www.rdocumentation.org/packages/shinyfilter/versions/0.1.1> 
- - Build a login page in shiny: <https://www.listendata.com/2019/06/how-to-add-login-page-in-shiny-r.html>
+</details>
 
 
-# References
-
-  
- blog post on shiny usage tracking: <https://www.rstudio.com/blog/track-shiny-app-use-server-api/> blog post about connect in general: <https://www.rstudio.com/blog/sharing-shiny-apps-on-rstudio-connect/> Sean Lopps article about usage tracking: <https://shiny.rstudio.com/articles/usage-metrics.html> filtering app based on viewer location: <https://stackoverflow.com/questions/40795172/shiny-how-to-filter-data-based-on-location-of-user-input-data> tracking user activity support article: <https://support.rstudio.com/hc/en-us/articles/360041320233-How-do-I-track-user-activity-within-a-Shiny-application-> learn about your user with client data: <https://shiny.rstudio.com/articles/client-data.html>
-
-The sales report app writeup: <https://shiny.rstudio.com/articles/permissions.html> the sales app code, at least the original version of it before it was moved: <https://github.com/Tavpritesh/shiny-dev-gallery/tree/master/personalized-ui> the community post asking about the sales app: <https://community.rstudio.com/t/creating-user-privileges-on-rstudio-connect-does-anyone-have-the-example-that-was-posted/138218> the slack thread where cole was trying to find it: <https://rstudio.slack.com/archives/G02HSFX6BEF/p1662053163952269> the docker repo, archived, with the personalized shiny app: <https://github.com/rstudio/docker-shiny-gallery/tree/master/ssp-personalized-ui> more on session objects: <https://shiny.rstudio.com/reference/shiny/latest/session.html> great post from a user with rstudio connect getting user info: <https://stackoverflow.com/questions/62546575/how-to-get-users-information-in-rshiny>
-
-<https://stackoverflow.com/questions/62546575/how-to-get-users-information-in-rshiny> <https://shiny.rstudio.com/articles/client-data.html> <https://shiny.rstudio.com/articles/permissions.html> more on session objects: <https://shiny.rstudio.com/reference/shiny/latest/session.html>
-
-At one point it was included in the user guide: <https://docs.rstudio.com/connect/1.7.6/user/shiny.html>
-
-Dynamic inputs: <https://mastering-shiny.org/action-dynamic.html>
-
-html links: <https://stackoverflow.com/questions/64267297/how-can-i-dynamically-render-html-links-in-shiny>
 
 
 

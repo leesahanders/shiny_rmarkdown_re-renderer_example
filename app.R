@@ -2,6 +2,9 @@
 
 #### Global ####
 
+# options(repos = c(REPO_NAME = "https://colorado.rstudio.com/rspm/all/__linux__/focal/latest"))
+# https://askubuntu.com/questions/1166292/version-glibcxx-3-4-26-not-found-even-though-libstdc-so-6-recent-enough
+
 library(shiny)
 library(rsconnect)
 library(connectapi)
@@ -55,9 +58,6 @@ server <- function(input, output, session) {
     
     showModal(modalDialog(
       title = "Complete ",
-      # paste0("Update complete: ",content_url),
-      #urlModal(url = content_url, title = "Link", subtitle = NULL),
-      #paste0('Update complete: <a href="',content_url,'">Link</a>'),
       tags$div("Finished: ", tags$a(href = content_url, " Document updated .")),
       easyClose = TRUE
     ))
@@ -113,15 +113,6 @@ server <- function(input, output, session) {
     )
   })
   
-  # Exploring env information for seeing current user
-  # output$envvarText <- renderText({
-  #   paste(
-  #     capture.output(
-  #       str(as.list(Sys.getenv()))
-  #     ),
-  #     collapse = "\n"
-  #   )
-  # })
 }
 
 shinyApp(ui, server)

@@ -11,7 +11,7 @@ This is a very specific example, however it explores a couple different elements
 I hope you are able to get from here what you need and feel to free to add an issue if you have any suggestions/requests. 
 
 
-### Output
+### Check it out
 
 ![Triggering the Rmarkdown to generate from a Shiny App](/img/programmatic.gif "Example output")
 

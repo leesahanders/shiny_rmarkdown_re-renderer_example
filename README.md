@@ -1,6 +1,8 @@
-# How to write an app that programmatically allows select users to re-render Connect documents  
+# Shiny app for re-rendering deployed documents
 
-This app generates a list of available content on your Connect server and uses session information about the viewer to filter document options for triggering re-rendering. 
+### Purpose
+
+This page details how to write an app that programmatically allows select users to re-render Connect documents. 
 
 This is a very specific example, however it explores a couple different elements that may be useful if you've come across this page. Some of these include: 
 
@@ -10,50 +12,19 @@ This is a very specific example, however it explores a couple different elements
 
 I hope you are able to get from here what you need and feel to free to add an issue if you have any suggestions/requests. 
 
-
 ### Check it out
 
 ![Triggering the Rmarkdown to generate from a Shiny App](/img/programmatic.gif "Example output")
 
-### Setup
-
-The key packages being used in this example are: 
-
- - [connectapi package](https://github.com/rstudio/connectapi) for content list and programmatic re-rendering (which compliments  [rsconnect](https://github.com/rstudio/rsconnect) )
- - [usethis](https://usethis.r-lib.org/index.html) for storing environment variables
- - [Shiny](https://shiny.rstudio.com/) for app framework and reactivity
- - [dplyr](https://dplyr.tidyverse.org/) for readability
-
-### Shiny 
-
-A simple reactive shiny template was used for setting up the initial reactivity. 
-
-<details>
-  <summary>Relevant reading:</summary>: 
-
- - Starting template: <https://shiny.rstudio.com/articles/dynamic-ui.html> 
- - Mastering shiny: <https://mastering-shiny.org/action-dynamic.html> 
- - Amazing database shiny app: <https://shanghai.hosting.nyu.edu/data/r/case-4-database-management-shiny.html> 
- - Shiny app as a package: <https://engineering-shiny.org/structuring-project.html> 
- - Converting a shiny app to async: <https://rstudio.github.io/promises/articles/casestudy.html> 
- - Shiny filter based on user inputs for dataframe: <https://stackoverflow.com/questions/72091981/r-shiny-filter-data-based-on-user-input-and-update-the-plot> 
- - Shiny app dealing with json: <https://community.rstudio.com/t/shiny-download-data-with-filter-parameters/80915/6> 
- - Shiny filters: <https://www.rdocumentation.org/packages/shinyfilter/versions/0.1.1> 
- - Build a login page in shiny: <https://www.listendata.com/2019/06/how-to-add-login-page-in-shiny-r.html>
-
-</details>
-
-
 ### Variables are being saved to the user level .Renviron config file
 
-For this project the following variables are being saved in the .Renviron file (credentials are stripped for security): 
+For this project the following variables are being saved in the .Renviron file (credentials are stripped for security), as well as added to Connect as environment variables: 
 
  - CONNECT_API_KEY=**REDACTED**
  - CONNECT_SERVER=**REDACTED**
  - OWNER_GUID=**REDACTED**
 
-
-[`usethis`](https://usethis.r-lib.org/) has a function for creating and editing the .Renviron file
+[`usethis`](https://usethis.r-lib.org/) has a function for creating and editing the .Renviron file: 
 
 ```r
 library(usethis)
@@ -62,13 +33,11 @@ usethis::edit_r_environ()
 
 Add the variables to that file in the format `variable_name = "variable_value"` and save it. Restart the session so the new environment variables will be loaded with `ctrl shift f10` or through the RStudio IDE through the **Session** dropdown and selecting **Restart R**. 
 
-Saved variables can be accessed with:
+Saved variables are accessed with:
 
 ```r
 variable_name <- Sys.getenv("variable_name")
 ```
-
- 
 
 <details>
   <summary>Relevant reading:</summary>
@@ -301,7 +270,6 @@ variant_history <- get_variant_renderings(rmd_content_variant)
 
 For this example a spinner widget has been added using [shinycssloaders](https://github.com/daattali/shinycssloaders) as well as a Modal pop-up message using [ModalURL](https://shiny.rstudio.com/reference/shiny/1.6.0/urlModal.html). 
 
-
 <details>
   <summary>Relevant reading:</summary>
 
@@ -314,10 +282,7 @@ For this example a spinner widget has been added using [shinycssloaders](https:/
 
 </details>
 
-
 ### Bonus: Git link! 
 
 Using the [gitlink](https://github.com/colearendt/gitlink) package developed by Cole. 
-
-
 

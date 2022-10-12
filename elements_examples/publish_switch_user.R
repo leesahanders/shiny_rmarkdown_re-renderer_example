@@ -115,3 +115,23 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 
 
+
+### Shiny 
+
+# A simple reactive shiny template was used for setting up the initial reactivity. 
+# 
+# <details>
+#   <summary>Relevant reading:</summary>: 
+#   
+#   - Starting template: <https://shiny.rstudio.com/articles/dynamic-ui.html> 
+#   - Mastering shiny: <https://mastering-shiny.org/action-dynamic.html> 
+#   - Amazing database shiny app: <https://shanghai.hosting.nyu.edu/data/r/case-4-database-management-shiny.html> 
+#   - Shiny app as a package: <https://engineering-shiny.org/structuring-project.html> 
+#   - Converting a shiny app to async: <https://rstudio.github.io/promises/articles/casestudy.html> 
+#   - Shiny filter based on user inputs for dataframe: <https://stackoverflow.com/questions/72091981/r-shiny-filter-data-based-on-user-input-and-update-the-plot> 
+#   - Shiny app dealing with json: <https://community.rstudio.com/t/shiny-download-data-with-filter-parameters/80915/6> 
+#   - Shiny filters: <https://www.rdocumentation.org/packages/shinyfilter/versions/0.1.1> 
+#   - Build a login page in shiny: <https://www.listendata.com/2019/06/how-to-add-login-page-in-shiny-r.html>
+#   
+#   </details>
+

@@ -1,0 +1,14 @@
+name: shiny_rmarkdown_re-renderer_example
+title: shiny_rmarkdown_re-renderer_example
+username: lisa.anders
+account: lisa.anders
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 12958
+bundleId: 63590
+url: https://colorado.rstudio.com/rsc/content/a1ce7be0-4eec-44c9-a42b-4f6aadadd270/
+when: 1665611404.7559
+lastSyncTime: 1665611404.75591
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: elements_examples/connectapi.R|elements_examples/publish_switch_user.R|elements_examples/rsconnect.R|elements_examples/session-user.R

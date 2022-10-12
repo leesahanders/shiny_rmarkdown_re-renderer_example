@@ -10,6 +10,11 @@ This is a very specific example, however it explores a couple different elements
 
 I hope you are able to get from here what you need and feel to free to add an issue if you have any suggestions/requests. 
 
+
+### Output
+
+![Triggering the Rmarkdown to generate from a Shiny App](/img/programmatic.gif "Example output")
+
 ### Setup
 
 The key packages being used in this example are: 
@@ -71,6 +76,15 @@ variable_name <- Sys.getenv("variable_name")
 When working in a more complex environment structure where separate project, site, and user environments are being used [this support article has useful information](https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf) with a [deeper dive into R's startup here](https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/).
 
 </details>
+
+### Package management is using renv
+
+This project is using [renv](https://rstudio.github.io/renv/articles/collaborating.html). In order to set up this example and have a working example run: 
+
+```
+library(renv)
+renv::restore()
+```
 
 ### Capturing user information 
 
@@ -301,7 +315,9 @@ For this example a spinner widget has been added using [shinycssloaders](https:/
 </details>
 
 
+### Bonus: Git link! 
 
+Using the [gitlink](https://github.com/colearendt/gitlink) package developed by Cole. 
 
 
 

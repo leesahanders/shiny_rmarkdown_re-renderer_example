@@ -153,7 +153,9 @@ The output will show:
 
 ### Programmatic rendering 
 
-There are two options for triggering rendering from the console. We can either use rsconnect to trigger publishing (where the content to be published is in the same folder as the app doing the triggering) or we can use connectapi to interface with the API to trigger render on our behalf for already published content. 
+There are three options for triggering rendering from the console. We can either use rsconnect to trigger publishing (where the content to be published is in the same folder as the app doing the triggering) or we can use connectapi to interface with the API to trigger render on our behalf for already published content. 
+
+Using the Connect API directly: <https://docs.posit.co/connect/api/#post-/v1/content/-guid-/deploy>
 
 Using rsconnect: 
 
